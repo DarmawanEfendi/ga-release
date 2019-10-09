@@ -24,4 +24,14 @@ describe("GET /", function() {
                 done();
             });
     });
+
+    it("it should test has status code 200", function(done) {
+        request(app)
+            .get("/test")
+            .expect(200)
+            .end(function(err, res){
+                if (err) done(err);
+                done();
+            });
+    });
 });
