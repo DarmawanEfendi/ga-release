@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9cd0ca1d-c511-41ea-8ea1-c3e13f00c6c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test-pages.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/test-pages.test.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,7 +52,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.GET /.it should get hello world!">
+  <component name="RunManager" selected="Mocha.GET / (1)">
+    <configuration name="GET / (1)" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/test/test-pages.test.js</test-file>
+      <test-names>
+        <name value="GET /" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="GET /" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -85,6 +101,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.GET / (1)" />
         <item itemvalue="Mocha.GET /.it should get hello world!" />
         <item itemvalue="Mocha.GET /" />
       </list>
@@ -100,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570628889721</updated>
-      <workItem from="1570628892533" duration="1878000" />
+      <workItem from="1570628892533" duration="2279000" />
     </task>
     <servers />
   </component>
