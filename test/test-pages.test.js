@@ -34,4 +34,14 @@ describe("GET /", function() {
                 done();
             });
     });
+
+    it("it should test has hello world", function(done) {
+        request(app)
+            .get("/test")
+            .expect('Hello World!!!')
+            .end(function(err, res){
+                if (err) done(err);
+                done();
+            });
+    });
 });
