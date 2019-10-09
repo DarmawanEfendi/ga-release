@@ -14,4 +14,14 @@ describe("GET /", function() {
                 done();
             });
     });
+
+    it("it should get hello world!", function(done) {
+        request(app)
+            .get("/")
+            .expect('Hello World!')
+            .end(function(err, res){
+                if (err) done(err);
+                done();
+            });
+    });
 });
