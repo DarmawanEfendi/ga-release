@@ -1,5 +1,6 @@
-name-template: 'v$NEXT_PATCH_VERSION 🌈'
-tag-template: 'v$NEXT_PATCH_VERSION'
+# Config for https://github.com/apps/release-drafter
+branches:
+  - master
 categories:
   - title: '🚀 Features'
     labels:
@@ -12,7 +13,6 @@ categories:
       - 'bug'
   - title: '🧰 Maintenance'
     label: 'chore'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   ## Changes
 
