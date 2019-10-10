@@ -3,7 +3,7 @@ name: Create and publish Workflow
 on:
   push:
     tags:
-      - refs/tags/@orgname/*
+      - refs/tags/*
 jobs:
   create_publish_image:
     needs: update_draft_release
