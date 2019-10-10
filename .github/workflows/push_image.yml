@@ -2,6 +2,8 @@ name: Create and publish Workflow
 
 on:
   push:
+    branches:
+      - 'releases/**'
     tags:
       - v1.*
 jobs:
