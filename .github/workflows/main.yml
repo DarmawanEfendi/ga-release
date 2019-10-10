@@ -40,7 +40,7 @@ jobs:
       - name: Create and Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: gatest:1.0.0
+          name: gatest
           username: ${{ secrets.ALIBABA_DOCKER_USERNAME }}
           password: ${{ secrets.ALIBABA_DOCKER_PASSWORD }}
           registry: ${{ secrets.ALIBABA_REGISTRY_URL }}
