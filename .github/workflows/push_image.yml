@@ -16,3 +16,4 @@ jobs:
           password: ${{ secrets.ALIBABA_DOCKER_PASSWORD }}
           registry: ${{ secrets.ALIBABA_REGISTRY_URL }}
           dockerfile: Dockerfile
+          snapshot: true
