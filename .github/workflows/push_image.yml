@@ -2,7 +2,7 @@ name: Create and publish Workflow
 
 on:
   push:
-    tags:
+    branches:
       - refs/tags/*
 jobs:
   create_publish_image:
