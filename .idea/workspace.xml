@@ -52,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.GET /.it should test has hello world">
+  <component name="RunManager" selected="Mocha.GET / (1)">
     <configuration name="GET / (1)" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -133,9 +133,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Mocha.GET /.it should test has hello world" />
         <item itemvalue="Mocha.GET / (1)" />
         <item itemvalue="Mocha.GET /.it should get hello world!" />
+        <item itemvalue="Mocha.GET /.it should test has hello world" />
         <item itemvalue="Mocha.GET /.it should test has status code 200" />
         <item itemvalue="Mocha.GET /" />
       </list>
