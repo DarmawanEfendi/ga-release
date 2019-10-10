@@ -32,3 +32,15 @@ jobs:
       - uses: toolmantim/release-drafter@v5.2.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  create_publish_image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Create and Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: gatest:1.0.0
+          username: ${{ secrets.ALIBABA_DOCKER_USERNAME }}
+          password: ${{ secrets.ALIBABA_DOCKER_PASSWORD }}
+          registry: ${{ secrets.ALIBABA_REGISTRY_URL }}
+          dockerfile: Dockerfile
