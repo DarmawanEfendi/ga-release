@@ -24,14 +24,15 @@ jobs:
     needs: build_push
     runs-on: ubuntu-latest
     steps:
-      - name: setup kubectl
-        uses: azure/setup-kubectl@v1
+      - name: check kubectl version
+        uses: steebchen/kubectl@master
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
-          version: 'v1.16.1' # default is latest stable
-        id: install
-      - name: set context
-        uses: azure/k8s-actions/k8s-set-context@master
+          args: version
+      - name: use context me-integration
+        uses: steebchen/kubectl@master
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
-          kubeconfig: ${{ secrets.ALIBABA_KUBE_CONFIG }}
-          context: "ME-Integration"
-        id: login
+          args: config use-context ME-Integration
