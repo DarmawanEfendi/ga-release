@@ -22,7 +22,7 @@
   <component name="ProjectId" id="1RyAJLK4diHDBE71lZsiNd1C7Q4" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Efc/efc.services" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -151,7 +151,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570628889721</updated>
       <workItem from="1570628892533" duration="2541000" />
-      <workItem from="1570771397039" duration="2470000" />
+      <workItem from="1570771397039" duration="3658000" />
     </task>
     <servers />
   </component>
