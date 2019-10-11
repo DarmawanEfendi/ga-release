@@ -38,6 +38,7 @@ jobs:
           namespace: development
           manifests: |
             manifests/deployment.yml
+            manifests/service.yml
           images: |
             ${{ secrets.ALIBABA_REGISTRY_URL }}/gatest:${{steps.get_version.outputs.VERSION}}
           imagepullsecrets: |
