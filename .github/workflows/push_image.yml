@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       - name: Create and Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
@@ -19,5 +22,4 @@ jobs:
           snapshot: true
       - name: print echo
         run: |
-          echo ${GITHUB_REF} ${GITHUB_SHA}
-          echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+          echo ${GITHUB_REF} ${GITHUB_SHA} ${steps.get_version.outputs.VERSION}
