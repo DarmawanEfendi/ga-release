@@ -11,9 +11,8 @@ jobs:
       - name: Create and Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: gatest
+          name: gatest:${TAG}
           username: ${{ secrets.ALIBABA_DOCKER_USERNAME }}
           password: ${{ secrets.ALIBABA_DOCKER_PASSWORD }}
           registry: ${{ secrets.ALIBABA_REGISTRY_URL }}
           dockerfile: Dockerfile
-          snapshot: true
