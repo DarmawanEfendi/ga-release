@@ -34,5 +34,6 @@ jobs:
         with:
           kubeconfig: ${{ secrets.ALIBABA_KUBE_CONFIG }}
       - run: |
+          kubectl config use-context ME-Production
           kubectl config view
           kubectl config current-context
