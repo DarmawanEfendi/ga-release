@@ -20,11 +20,6 @@ jobs:
           registry: ${{ secrets.ALIBABA_REGISTRY_URL }}
           dockerfile: Dockerfile
           snapshot: true
-  deploy:
-    needs: build_push
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
       - name: setup kubectl
         uses: azure/setup-kubectl@v1
         with:
@@ -43,6 +38,6 @@ jobs:
           manifests: |
             manifests/deployment.yml
           images: |
-            ${{ secrets.ALIBABA_REGISTRY_URL }}/gatest:${{job.build_push.steps.get_version.outputs.VERSION}}
+            ${{ secrets.ALIBABA_REGISTRY_URL }}/gatest:${{steps.get_version.outputs.VERSION}}
           imagepullsecrets: |
             regcred
