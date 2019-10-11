@@ -18,4 +18,5 @@ jobs:
           dockerfile: Dockerfile
           snapshot: true
       - name: print echo
-        run: echo $SNAPSHOT_TAG $TAG
+        run: |
+          echo $SNAPSHOT_TAG $TAG
