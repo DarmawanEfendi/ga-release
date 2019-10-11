@@ -20,3 +20,4 @@ jobs:
       - name: print echo
         run: |
           echo ${GITHUB_REF} ${GITHUB_SHA}
+          echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
