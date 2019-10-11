@@ -19,4 +19,4 @@ jobs:
           snapshot: true
       - name: print echo
         run: |
-          echo $SNAPSHOT_TAG $TAG
+          echo "${SNAPSHOT_TAG}"
