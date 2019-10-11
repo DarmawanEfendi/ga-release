@@ -1,20 +1,19 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: api
+  name: gatest-api
   namespace: development
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: api
-        version: v1
+        app: gatest-api
     spec:
       containers:
-        - name: api
+        - name: gatest-api
           image: registry-intl.ap-southeast-5.aliyuncs.com/musteat/gatest:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
-              name: api-port
+              name: gatest-api-port
