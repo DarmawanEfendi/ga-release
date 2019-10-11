@@ -27,7 +27,7 @@ jobs:
       - name: setup kubectl
         uses: azure/k8s-actions/setup-kubectl@master
         with:
-          version: 'latest' # default is latest stable
+          version: 'v1.16.1' # default is latest stable
         id: install
       - name: set context
         uses: azure/k8s-actions/k8s-set-context@master
