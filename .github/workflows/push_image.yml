@@ -21,7 +21,7 @@ jobs:
           dockerfile: Dockerfile
           snapshot: true
   deploy:
-    needs: build
+    needs: build_push
     runs-on: ubuntu-latest
     steps:
       - name: setup kubectl
