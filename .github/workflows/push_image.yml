@@ -4,7 +4,7 @@ on:
   release:
     types: [published]
 jobs:
-  build:
+  build_push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -20,6 +20,17 @@ jobs:
           registry: ${{ secrets.ALIBABA_REGISTRY_URL }}
           dockerfile: Dockerfile
           snapshot: true
-      - name: print echo
-        run: |
-          echo ${GITHUB_REF} ${GITHUB_SHA} ${{steps.get_version.outputs.VERSION}}
+  deploy:
+    needs: build
+      runs-on: ubuntu-latest
+      steps:
+        - name: setup kubectl
+          uses: azure/k8s-actions/setup-kubectl@master
+          with:
+            version: '1.16.1' # default is latest stable
+          id: install
+        - uses: azure/k8s-actions/k8s-set-context@master
+          with:
+            kubeconfig: ${{ secrets.ALIBABA_KUBE_CONFIG }}
+            context: 'ME-Integration'  # Optional, uses the current-context from kubeconfig by default
+          id: login
