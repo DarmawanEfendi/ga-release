@@ -35,6 +35,7 @@ jobs:
           kubectl config current-context
       - uses: azure/k8s-actions/k8s-deploy@master
         with:
+          namespace: development
           manifests: |
             manifests/deployment.yml
           images: |
