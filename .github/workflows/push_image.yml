@@ -24,12 +24,6 @@ jobs:
     needs: build_push
     runs-on: ubuntu-latest
     steps:
-      - name: check kubectl version
-        uses: steebchen/kubectl@master
-        env:
-          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-        with:
-          args: version
       - name: use context me-integration
         uses: steebchen/kubectl@master
         env:
