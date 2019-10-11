@@ -5,24 +5,17 @@ on:
     types: [published]
 jobs:
   build:
-    name: Build, push, and deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout master
-        uses: actions/checkout@master
-
-      - name: Build container image
-        uses: actions/docker/cli@master
+      - uses: actions/checkout@master
+      - name: Create and Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          args: build -t ${{ secrets.ALIBABA_REGISTRY_URL }}/gatest:$(echo $GITHUB_SHA | head -c7) .
-
-      - name: Docker Login
-        uses: actions/docker/login@master
-        env:
-          DOCKER_USERNAME: ${{ secrets.ALIBABA_DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.ALIBABA_DOCKER_PASSWORD }}
-
-      - name: Push image to Docker Hub
-        uses: actions/docker/cli@master
-        with:
-          args: push ${{ secrets.ALIBABA_REGISTRY_URL }}/gatest:$(echo $GITHUB_SHA | head -c7)
+          name: gatest
+          username: ${{ secrets.ALIBABA_DOCKER_USERNAME }}
+          password: ${{ secrets.ALIBABA_DOCKER_PASSWORD }}
+          registry: ${{ secrets.ALIBABA_REGISTRY_URL }}
+          dockerfile: Dockerfile
+          snapshot: true
+      - name: print echo
+        run: echo $SNAPSHOT_TAG $TAG
