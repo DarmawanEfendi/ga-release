@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cd0ca1d-c511-41ea-8ea1-c3e13f00c6c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/Any-Branch-PR-Test-Workflow.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Master-Release-Workflow.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/push_image.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Master-Deployment-Workflow.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -153,7 +150,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570628889721</updated>
       <workItem from="1570628892533" duration="2541000" />
-      <workItem from="1570771397039" duration="10546000" />
+      <workItem from="1570771397039" duration="11028000" />
     </task>
     <servers />
   </component>
