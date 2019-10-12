@@ -46,3 +46,6 @@ jobs:
       run: |
         echo ${GITHUB_REF}
         echo ${GITHUB_SHA}
+        echo ${{steps.step_tag.ref}}
+        echo ${{steps.step_tag.outputs}}
+        echo ${{steps.step_tag.outputs.ref}}
