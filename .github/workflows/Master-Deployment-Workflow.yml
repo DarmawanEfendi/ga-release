@@ -1,17 +1,19 @@
-name: Create and publish Workflow
+name: Master Deployment Workflow
 
 on:
   release:
     types: [published]
 jobs:
-  build_push:
+  job_1:
+    name: Build, Push, Deployment
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Get the version
+      - name: Checkout master branch
+        uses: actions/checkout@master
+      - name: Get the version of release
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-      - name: Create and Publish to Registry
+      - name: Build and Push image to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: gatest:${{steps.get_version.outputs.VERSION}}
@@ -20,20 +22,22 @@ jobs:
           registry: ${{ secrets.ALIBABA_REGISTRY_URL }}
           dockerfile: Dockerfile
           snapshot: true
-      - name: setup kubectl
+      - name: Setup kubectl
         uses: azure/setup-kubectl@v1
         with:
           version: 'v1.16.1' # default is latest stable
         id: install
-      - name: set context
+      - name: Config the KUBECONFIG
         uses: azure/k8s-actions/k8s-set-context@master
         with:
           kubeconfig: ${{ secrets.ALIBABA_KUBE_CONFIG }}
-      - run: |
+      - name: Set kubectl context
+        run: |
           kubectl config use-context ME-Integration
           kubectl config view
           kubectl config current-context
-      - uses: azure/k8s-actions/k8s-deploy@master
+      - name: Deployment image to server
+        uses: azure/k8s-actions/k8s-deploy@master
         with:
           namespace: development
           manifests: |
