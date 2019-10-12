@@ -27,7 +27,7 @@ jobs:
         env:
           CI: true
   job_2:
-    need: job_1
+    needs: job_1
     name: Create tag
     runs-on: ubuntu-latest
     steps:
