@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cd0ca1d-c511-41ea-8ea1-c3e13f00c6c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/push_image.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/push_image.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manifests/service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/manifests/service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test-pages.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/test-pages.test.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +152,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570628889721</updated>
       <workItem from="1570628892533" duration="2541000" />
-      <workItem from="1570771397039" duration="8983000" />
+      <workItem from="1570771397039" duration="9342000" />
     </task>
     <servers />
   </component>
