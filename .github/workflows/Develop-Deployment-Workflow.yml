@@ -44,5 +44,5 @@ jobs:
     - name: Get the version of tag
       id: get_version
       run: |
-        ${{steps.step_tag.outputs}}
+        ${{steps.step_tag.outputs}} ${GITHUB_REF} ${GITHUB_SHA}
     
