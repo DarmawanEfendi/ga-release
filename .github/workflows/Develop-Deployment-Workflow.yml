@@ -36,7 +36,7 @@ jobs:
         ref: develop
     - name: Bump version and push tag
       id: step_tag
-      uses: anothrNick/github-tag-action@master
+      uses: anothrNick/github-tag-action@output-tag
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DEFAULT_BUMP: 'patch'
@@ -48,4 +48,4 @@ jobs:
         echo ${GITHUB_SHA}
         echo ${{steps.step_tag.ref}}
         echo ${{steps.step_tag.outputs}}
-        echo ${{steps.step_tag.outputs.ref}}
+        echo ${{steps.step_tag.outputs.new_tag}}
