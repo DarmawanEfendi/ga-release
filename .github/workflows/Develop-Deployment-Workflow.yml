@@ -54,28 +54,28 @@ jobs:
         registry: ${{ secrets.ALIBABA_REGISTRY_URL }}
         dockerfile: Dockerfile
         snapshot: true
-        - name: Setup kubectl
-          uses: azure/setup-kubectl@v1
-          with:
-            version: 'v1.16.1' # default is latest stable
-          id: install
-        - name: Config the KUBECONFIG
-          uses: azure/k8s-actions/k8s-set-context@master
-          with:
-            kubeconfig: ${{ secrets.ALIBABA_KUBE_CONFIG }}
-        - name: Set kubectl context
-          run: |
-            kubectl config use-context ME-Integration
-            kubectl config view
-            kubectl config current-context
-        - name: Deployment image to server
-          uses: azure/k8s-actions/k8s-deploy@master
-          with:
-            namespace: development
-            manifests: |
-              manifests/deployment.yml
-              manifests/service.yml
-            images: |
-              ${{ secrets.ALIBABA_REGISTRY_URL }}/gatest:${{steps.step_tag.outputs.new_tag}}
-            imagepullsecrets: |
-              regcred
+    - name: Setup kubectl
+      uses: azure/setup-kubectl@v1
+      with:
+        version: 'v1.16.1' # default is latest stable
+      id: install
+    - name: Config the KUBECONFIG
+      uses: azure/k8s-actions/k8s-set-context@master
+      with:
+        kubeconfig: ${{ secrets.ALIBABA_KUBE_CONFIG }}
+    - name: Set kubectl context
+      run: |
+        kubectl config use-context ME-Integration
+        kubectl config view
+        kubectl config current-context
+    - name: Deployment image to server
+      uses: azure/k8s-actions/k8s-deploy@master
+      with:
+        namespace: development
+        manifests: |
+          manifests/deployment.yml
+          manifests/service.yml
+        images: |
+          ${{ secrets.ALIBABA_REGISTRY_URL }}/gatest:${{steps.step_tag.outputs.new_tag}}
+        imagepullsecrets: |
+          regcred
