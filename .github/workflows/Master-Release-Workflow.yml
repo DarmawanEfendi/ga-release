@@ -21,11 +21,6 @@ jobs:
     - name: NPM install
       run: |
         npm install
-    - name: NPM test
-      run: |
-        npm test
-      env:
-        CI: true
   job_2:
     name: Draft Release
     needs: job_1
